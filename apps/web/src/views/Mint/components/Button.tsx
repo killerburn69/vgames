@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 // eslint-disable-next-line import/no-named-as-default
-import { useToast } from '@pancakeswap/uikit'
+import { Button, useToast } from '@pancakeswap/uikit'
 // eslint-disable-next-line import/no-named-as-default
 import useMint from '../hooks/useMint'
 
@@ -13,7 +13,7 @@ const ButtonMint = styled.button`
   border: none;
   cursor: pointer;
 `
-const Button = ({ value, chain, setIsOpenModa }: any) => {
+const Buttons = ({ value, chain, setIsOpenModa }: any) => {
   const { address, isConnecting, isDisconnected } = useAccount()
   const [isDone, setIsDone]: any = useState(false)
   const [stepPending, setStepPending] = useState(false)
@@ -53,7 +53,12 @@ const Button = ({ value, chain, setIsOpenModa }: any) => {
     }
   }, [isDone])
   return (
-    <ButtonMint type="button" onClick={() => handlerOpenWallet()} disabled={isPending || isLoading}>
+    <Button
+      isLoading={isPending || isLoading}
+      type="button"
+      onClick={() => handlerOpenWallet()}
+      disabled={isPending || isLoading}
+    >
       {isPending || isLoading ? (
         <div className="flex">
           <span>Waiting for Minting...</span>
@@ -62,8 +67,8 @@ const Button = ({ value, chain, setIsOpenModa }: any) => {
       ) : (
         'Mint'
       )}
-    </ButtonMint>
+    </Button>
   )
 }
 
-export default Button
+export default Buttons

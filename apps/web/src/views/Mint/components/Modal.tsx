@@ -4,7 +4,7 @@ import { ModalBody, ModalContainer, ModalHeader, ModalV2 } from '@pancakeswap/ui
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useNetwork } from 'wagmi'
-import Button from './Button'
+import Buttons from './Button'
 
 const Input = styled.input`
   padding: 12px 8px;
@@ -30,7 +30,7 @@ const ModalMint = ({ isOpen, setIsOpenModa }) => {
           <h1 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '20px' }}>Number of BSC Testnet you mint</h1>
           <div>
             <Input type="text" placeholder="0,2" value={value} onChange={onChangeInput} />
-            <Button value={debouncedQuery} chain={chain} setIsOpenModa={setIsOpenModa} />
+            <Buttons value={debouncedQuery} chain={chain} setIsOpenModa={setIsOpenModa} />
           </div>
         </ModalBody>
       </ModalContainer>
