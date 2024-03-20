@@ -10,6 +10,7 @@ import { aptosLogoClass } from './Logo/CurrencyLogo.css'
 
 const evmChains = [
   { id: 56, name: 'BNB Smart Chain', chainName: 'bsc' },
+  { id: 97, name: 'BNB Smart Chain Testnet', chainName: 'tBNB' },
   { id: 1, name: 'Ethereum', chainName: 'eth' },
   { id: 324, name: 'zkSync Era', chainName: 'zkSync' },
   { id: 1101, name: 'Polygon zkEVM', chainName: 'polygonZkEVM' },
