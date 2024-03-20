@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 // eslint-disable-next-line import/no-named-as-default
-import { Button, useToast } from '@pancakeswap/uikit'
+import { useToast } from '@pancakeswap/uikit'
 // eslint-disable-next-line import/no-named-as-default
 import useMint from '../hooks/useMint'
 
@@ -53,12 +53,7 @@ const Buttons = ({ value, chain, setIsOpenModa }: any) => {
     }
   }, [isDone])
   return (
-    <Button
-      isLoading={isPending || isLoading}
-      type="button"
-      onClick={() => handlerOpenWallet()}
-      disabled={isPending || isLoading}
-    >
+    <ButtonMint type="button" onClick={() => handlerOpenWallet()} disabled={isPending || isLoading}>
       {isPending || isLoading ? (
         <div className="flex">
           <span>Waiting for Minting...</span>
@@ -67,7 +62,7 @@ const Buttons = ({ value, chain, setIsOpenModa }: any) => {
       ) : (
         'Mint'
       )}
-    </Button>
+    </ButtonMint>
   )
 }
 
