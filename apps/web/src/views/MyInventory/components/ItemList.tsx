@@ -11,9 +11,9 @@ const GridItem = styled.div`
   grid-template-columns: 0.5fr 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
   padding: 10px 0px;
 `
-const SliceString = (string: string, num1: number, num2: number) => {
-  const string1 = string.slice(0, num1)
-  const string2 = string.slice(-num2)
+const SliceString = (string: any, num1: number, num2: number) => {
+  const string1 = string?.slice(0, num1)
+  const string2 = string?.slice(-num2)
   return `${string1}...${string2}`
 }
 const ItemList = ({ item, address }) => {
@@ -43,9 +43,11 @@ const ItemList = ({ item, address }) => {
           <div>
             <p>#{item}</p>
           </div>
-          <div>
-            <p>{SliceString(address, 4, 4)}</p>
-          </div>
+          {address && (
+            <div>
+              <p>{SliceString(tokenData, 4, 4)}</p>
+            </div>
+          )}
           <div>
             <p>19m ago</p>
           </div>

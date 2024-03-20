@@ -76,7 +76,7 @@ const Overview = () => {
             <div>Best Offer</div>
             <div>Last Sale</div>
             <div>Rarity</div>
-            <div>Owner</div>
+            {address && <div>Owner</div>}
             <div>Time Listed</div>
           </GridTitle>
           <div style={{ padding: '20px 0px' }}>
