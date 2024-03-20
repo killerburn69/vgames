@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
-import { useMatchBreakpoints, ModalV2, useToast } from '@pancakeswap/uikit'
-import { useRouter } from 'next/router'
-import { useAccount } from 'wagmi'
-import { useSignMessage } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
+import { ModalV2, useMatchBreakpoints, useToast } from '@pancakeswap/uikit'
+import { useSignMessage } from '@pancakeswap/wagmi'
+import { useRouter } from 'next/router'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { useEffect, useState } from 'react'
 import { encodePacked, keccak256 } from 'viem'
+import { useAccount } from 'wagmi'
 import DesktopView from './DesktopView'
 import MobileView from './MobileView'
 
